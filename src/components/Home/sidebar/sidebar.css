@@ -1,0 +1,51 @@
+.sidebarcontainer{
+    flex: 3;
+    height: calc(100vh - 50px);
+    background-color: black;
+    border-color: burlywood;
+    overflow-y: scroll;
+   
+    
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    background: transparent;
+}
+::-webkit-scrollbar-track {
+    background: white;
+}
+::-webkit-scrollbar-thumb {
+    background: grey   ;
+}
+.sidebarlist{
+    padding: 20px;
+    margin: 0;
+    list-style: none;
+
+}
+.sidebarlistitem{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #F9883E;
+}
+.sidebarlistitemlink{
+    text-decoration: none;
+    color: #F9883E;
+    font-size: 15px;
+    font-weight: bold;
+
+}
+.sidebarlistitemlink:hover{
+    text-decoration: underline;
+}
+.sidebarlistitemicon{
+    margin-right: 10px;
+
+}
+
+.sidebarhr{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
