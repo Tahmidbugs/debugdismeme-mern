@@ -1,11 +1,21 @@
 .sidebarcontainer{
-    flex: 3;
-    height: calc(100vh - 50px);
+    flex: 2;
+    height: 100%;
     background-color: black;
     border-color: burlywood;
     overflow-y: scroll;
+    position: sticky;
+    top: 150px;
+    
    
     
+}
+.sidebarWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    height: 100%;
 }
 
 ::-webkit-scrollbar {

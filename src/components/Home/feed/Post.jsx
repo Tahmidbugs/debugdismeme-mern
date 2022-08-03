@@ -1,14 +1,17 @@
 import React from 'react';
 import './feed.css';
-function Post(props) {
+function Post({post}) {
+    const [neutralimage, setNeutralimage] = React.useState(require("../../../assets/neutral_unclicked.png"));
+    const [lolimage, setLolimage] = React.useState(require("../../../assets/lol_unclicked.png"));
+    const[roflimage, setRoflimage] = React.useState(require("../../../assets/rofl_unclicked.png"));
     return (
         <div className='post'>
             <div className='post-wrapper'>
 <div className="postTop">
     <div className="postTopLeft">
-        <img src={require("../../../assets/1.png")} alt="" className='postprofilepic'/>
+        <img src={post.profile_pic} alt="" className='postprofilepic'/>
         <div className="postTopLeftText">
-        <span className="postUsername">TedCodes</span>
+        <span className="postUsername">{post.username}</span>
         <span className='postTime'>1 hour ago</span>
         </div>
     </div>
@@ -16,15 +19,15 @@ function Post(props) {
     </div>
 </div>
 <div className="postCenter">
-    <div><span className="postCaption">Hey. This is a post</span></div>
-    <div className="postImage"><img src={require("../../../assets/memetemplates/2.jpg")} alt="" className='postimage'/></div>
+    <div><span className="postCaption">{post.caption}</span></div>
+    <div className="postImage"><img src={post.pic} alt="" className='postimage'/></div>
 </div>
 <div className="postBottom">
     <div className="postBottomLeft">
         <div className="postBottomLeftIcon">
-            <img src={require("../../../assets/neutral_unclicked.png")} alt="" className='postReaction'/>
-            <img src={require("../../../assets/lol_unclicked.png")} alt="" className='postReaction'/>
-            <img src={require("../../../assets/rofl_unclicked.png")} alt="" className='postReaction'/>
+            <img src={neutralimage} alt="" className='postReaction' onMouseEnter={()=>setNeutralimage(require("../../../assets/neutral_clicked.png"))} onMouseOut={()=>setNeutralimage(require("../../../assets/neutral_unclicked.png"))}/>
+            <img src={lolimage} alt="" className='postReaction' onMouseEnter={()=>setLolimage(require("../../../assets/lol_clicked.png"))} onMouseOut={()=>setLolimage(require("../../../assets/lol_unclicked.png"))}/>
+            <img src={roflimage} alt="" className='postReaction' onMouseEnter={()=>setRoflimage(require("../../../assets/rofl_clicked.png"))} onMouseOut={()=>setRoflimage(require("../../../assets/rofl_unclicked.png"))} />
 
             </div>
 </div>

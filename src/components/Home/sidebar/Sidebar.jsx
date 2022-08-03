@@ -45,7 +45,7 @@ function Sidebar(props) {
                         </a>
                     </li>
                 </ul>
-                <hr className="sidebarhr" />
+                
                 
             </div>
         </div>
