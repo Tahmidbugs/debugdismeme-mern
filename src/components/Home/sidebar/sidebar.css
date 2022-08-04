@@ -1,6 +1,6 @@
 .sidebarcontainer{
-    flex: 2;
-    height: 100%;
+    flex: 3;
+    
     background-color: black;
     border-color: burlywood;
     overflow-y: scroll;

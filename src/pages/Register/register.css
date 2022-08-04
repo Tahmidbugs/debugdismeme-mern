@@ -1,0 +1,108 @@
+.register{
+    height: 100vh;
+    width: 100vw;
+    background-color: #F9883E;
+}
+.registerwrapper{
+   display: flex;
+   flex:1;
+   
+}
+.registerText{
+   font-size: 25px;
+    color:#F9883E;
+    font-weight: bold;
+    margin:55px;
+    text-align: center;
+
+}
+.registerText2{
+    font-size: 35px;
+     color: black;
+    font-weight: bold;
+     
+ 
+ }
+
+.registerLeft{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    align-items: center;
+    margin-top:250px;
+    background-color: black;
+    height:80%;
+    border-radius: 50px;
+    
+}
+.registerRight{
+    flex: 1;
+    display: flex;
+    padding: 30px;
+    flex-direction: column;
+    align-items: center;
+    margin-top:200px;
+    justify-items: flex-end;
+   
+    
+ 
+    
+   
+}
+
+.registerLogo{
+    height: 250px;
+
+}
+.registerBox{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.registerInput{
+    width: 300px;
+    height: 50px;
+    border-radius: 20px;
+    border: 3px solid black;
+    margin-bottom: 10px;
+    font-size: 20px;
+    padding: 10px;
+    font-weight: bold;
+    color: black;
+    background-color: #8a512b60;
+}
+.registerInput::placeholder{
+    color: rgb(0, 0, 0);
+}
+.registerButton{
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+    border: 1px solid #F9883E;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.registerText3{
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+.RegisterButton{
+    width: 240px;
+    height: 50px;
+    border-radius: 15px;
+    border: 1px solid #F9883E;
+    background-color: rgb(85, 151, 23);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
