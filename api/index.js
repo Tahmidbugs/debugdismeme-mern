@@ -26,9 +26,11 @@ app.use(morgan("common"));
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/posts", PostRoute);
-
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+});
 //routes
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.listen(8800, () => {
+  console.log("Server is running on port 8800");
 });

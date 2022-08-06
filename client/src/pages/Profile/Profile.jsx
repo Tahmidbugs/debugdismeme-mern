@@ -1,31 +1,53 @@
 import React from 'react';
-import Feed from '../../components/Profile/feed/Feed';
+import Feed from '../../components/Home/feed/Feed';
 import Navbar from '../../components/Home/navbar/Navbar';
-import Rightbar from '../../components/Home/rightbar/Rightbar';
-import Sidebar from '../../components/Profile/sidebar/Sidebar';
-import './profile.css'
-import { GrUserAdd } from "react-icons/gr";
-import { MdChat, MdSupervisorAccount } from 'react-icons/md';
 
+import Sidebar from '../../components/Home/sidebar/Sidebar';
+import './profile.css'
+
+import { MdChat, MdSupervisorAccount } from 'react-icons/md';
+import axios from 'axios';
+import {useParams} from 'react-router-dom';
 function Profile(props) {
+    const[user, setUser] = React.useState(null);  
+    const username = useParams().username;
+    const fetchUser = async() => {
+        await axios.get(`/users?username=${username}`)
+        .then(res => {
+            setUser(res.data);
+        }
+        ).catch(err => {
+            console.log(err);
+        }
+        );
+        console.log("fetched user: ",user);
+    }
+    React.useEffect(() => {
+        fetchUser();
+    }
+    , []);
+
     return (
-        <div style={{backgroundColor:"black"}}>
+      <div style={{backgroundColor:"black"}}>
            <Navbar/>
            <div className="topandside">
             <Sidebar />
+            { user && 
             <div  className="profile">
-            <ProfileTop/>
-            <ProfileStats/>
+            <ProfileTop user={user}/>
+            <ProfileStats user={user}/>
             <FollowOrMessage/>
-          <Feed/>
+          <Feed username={user.username}/>
          
             
            
            </div>
            
-          
+            }
            </div>
         </div>
+      
+        
     );
 }
 
@@ -51,8 +73,9 @@ const FollowOrMessage = () => {
         </div>
     );
     }
-const ProfileStats = () => {
+const ProfileStats = ({user}) => {
     return (
+      
         <div className="profilestats">
             <div className="profilestatswrapper">
                 <div className="profilestatsitem">
@@ -61,12 +84,12 @@ const ProfileStats = () => {
                     
                 </div>
                 <div className="profilestatsitem">
-                    <span className="profilestatsitemnumber"> 90 </span>
+                    <span className="profilestatsitemnumber"> {user.following.length} </span>
                     <span className="profilestatsitemtext"> Followings </span>
                     
                 </div>
                 <div className="profilestatsitem">
-                    <span className="profilestatsitemnumber"> 120 </span>
+                    <span className="profilestatsitemnumber">{user.followers.length} </span>
                     <span className="profilestatsitemtext"> Followers </span>
                     
                 </div>
@@ -77,30 +100,21 @@ const ProfileStats = () => {
 }
 
 
-const ProfileTop = () => {
+const ProfileTop = ({user}) => {
     return (
         <div className="profiletop">
             <div className="profiletopwrapper">
                 <div className="coverPhoto">
-                    <img src={"https://i.pinimg.com/originals/9e/8d/74/9e8d747819250be17bff875604223894.jpg"} style={{height:200, width:"100%", objectFit:"cover"}}/>
+                    <img src={user.coverPicture} style={{height:200, width:"100%", objectFit:"cover"}}/>
                 </div>
                 <div className="profiletopwrapperleft">
-                    <img src={require("../../assets/3.png")} style={{height:150, width:150, borderRadius:"50%", alignSelf:"center"}}/>
+                    <img src={user.profilePicture} style={{height:150, width:150, borderRadius:"50%", alignSelf:"center"}}/>
                     <div className="profiletopwrapperlefttext">
-                        <h1>John Doe</h1>
-                        <p>@johndoe</p>
+                        <h1>{user.username}</h1>
+                        <p>@{user.username}</p>
                     </div>
                 </div>
-                <div className="profiletopwrapperright">
-                    <div className="profiletopwrapperrighttext">
-                        <p>1234</p>
-                        <p>Following</p>
-                    </div>
-                    <div className="profiletopwrapperrighttext">
-                        <p>1234</p>
-                        <p>Followers</p>
-                    </div>
-                </div>
+               
             </div>
         </div>
     );

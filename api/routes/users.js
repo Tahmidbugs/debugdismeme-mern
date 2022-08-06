@@ -28,14 +28,19 @@ router.delete("/:id", async (req, res) => {
     console.log(err);
   }
 });
-
+//lh:8800/users?userid=2312312 &username=john
 //get user
-router.get("/:id", async (req, res) => {
+router.get("/", async (req, res) => {
+  const userid = req.query.userid;
+  const uname = req.query.username;
   try {
-    const user = await User.findById(req.params.id);
+    const user = userid
+      ? await User.findOne({ _id: userid })
+      : await User.findOne({ username: uname });
     const { _id, username, email, profilePicture, ...rest } = user._doc;
 
     res.status(200).json(user);
+    console.log("users are:", user);
   } catch (err) {
     console.log(err);
   }

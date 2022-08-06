@@ -1,5 +1,5 @@
 .rightbar{
-    flex:3;
+    flex:2.5;
     border-left-color: white;
     border-left-width: 1px;
     height:100%;
@@ -14,6 +14,7 @@
 .rightbarheader{
     display: flex;
     align-items: center;
+    justify-content: space-around;
 }
 
 .rightbaricon{

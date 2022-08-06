@@ -20,7 +20,7 @@ function Register(props) {
                         <input type="text" className="registerInput" placeholder="Email"/>
                         <input type="password" className="registerInput" placeholder="Password"/>
                         <button className="registerButton">Create Account</button>
-                        <span className="registerText3">Already have an account? <a href="/signup">Login</a></span>
+                        <span className="registerText3">Already have an account? <a href="/login">Login</a></span>
 
                     </div>
                 </div>

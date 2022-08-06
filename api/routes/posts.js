@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const Post = require("../models/Post");
+const User = require("../models/User");
 
 //create post
 router.post("/", async (req, res) => {
@@ -7,6 +8,31 @@ router.post("/", async (req, res) => {
   try {
     const savedPost = await post.save();
     res.status(200).json(savedPost);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+//get all posts
+router.get("/", async (req, res) => {
+  try {
+    const posts = await Post.find();
+    res.status(200).json(posts);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+//get user's posts
+router.get("/profile/:user", async (req, res) => {
+  try {
+    const user = await User.findOne({ username: req.params.user });
+    console.log("looking for user: ", req.params.user);
+    console.log("found user: ", user);
+    console.log("his id: ", user._id);
+    const posts = await Post.find({ userid: user._id });
+    console.log("his posts: ", posts);
+    res.status(200).json(posts);
   } catch (err) {
     console.log(err);
   }
@@ -66,16 +92,6 @@ router.get("/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
     res.status(200).json(post);
-  } catch (err) {
-    console.log(err);
-  }
-});
-
-//get all posts
-router.get("/", async (req, res) => {
-  try {
-    const posts = await Post.find();
-    res.status(200).json(posts);
   } catch (err) {
     console.log(err);
   }

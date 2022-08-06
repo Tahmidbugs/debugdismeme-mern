@@ -1,9 +1,11 @@
-.profiletopwrapperlefttext{
-    font-size: 14px;
+.profiletopwrapperlefttext>h1{
+   
     font-weight: bold;
     color: #fff;
     margin-top: 10px;
     margin-bottom: 10px;
+    align-self: center;
+    margin-left: 15px;
 }
 .profiletopwrapperlefttext>p{
     font-size: 14px;
@@ -50,7 +52,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: -80px;
+    margin-top:10px;
 }
 .profilestatsitem{
     background-color: #42413f;
@@ -100,6 +102,9 @@
     display: flex;
     align-items: center;
 }
+.followormessageitem1:hover{
+    opacity:0.7;
+}
 .followormessageitem2{
     background-color: #3ebef9;
     color:black;
@@ -109,6 +114,9 @@
     border-radius: 20px;
     display: flex;
     align-items: center;
+}
+.followormessageitem2:hover{
+    opacity:0.7;
 }
 .followormessagetext{
     color:black;

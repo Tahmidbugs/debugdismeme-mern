@@ -23,12 +23,12 @@ const userSchema = new mongoose.Schema(
     profilePicture: {
       type: String,
       default:
-        "https://res.cloudinary.com/dzqbzqgqm/image/upload/v1599098981/default_profile_picture_qjqjqj.png",
+        "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
     },
     coverPicture: {
       type: String,
       default:
-        "https://res.cloudinary.com/dzqbzqgqm/image/upload/v1599098981/default_cover_picture_qjqjqj.png",
+        "https://timelinecovers.pro/facebook-cover/download/life-cycle-facebook-cover.jpg",
     },
     followers: {
       type: [String],

@@ -1,14 +1,20 @@
 import React from 'react';
 import { MdMessage, MdPerson } from 'react-icons/md';
 import './rightbar.css';
+import {Link} from 'react-router-dom';
 function Rightbar(props) {
     return (
         <div className='rightbar'>
             <div className="rightbarwrapper">
                 <div className="rightbarheader">
+                    <div>
+                    <Link to="/profile">
                     <MdPerson className='rightbaricon'/>
+                    </Link></div>
+                    <div>
                     <MdMessage className='rightbaricon'/>
                     </div>
+                </div>
                 <hr className="rightbarhr" />
                 <div className="rightbarbody">
                     <div className="rightbarbodyheader">
