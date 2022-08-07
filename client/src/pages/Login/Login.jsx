@@ -1,7 +1,21 @@
 import React from 'react';
 import './login.css';
 import {Link} from 'react-router-dom';
+import {loginCall} from "../../apiCalls";
+import {useRef} from 'react';
+import { useContext } from 'react';
+import {AuthContext} from "../../context/AuthContext";
+import { CircularProgress } from '@material-ui/core';
 function Login(props) {
+    const email= useRef();
+    const password= useRef();
+    const {user,dispatch, isFetching}= useContext(AuthContext);
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        loginCall({email:email.current.value,password:password.current.value}, dispatch);
+        console.log(user);
+    }
     return (
         <div className='login'>
             <div className='loginwrapper'>
@@ -15,13 +29,13 @@ function Login(props) {
                         <span className="loginText2">Login and stay connected</span>
                         </div>
 
-                    <div className="loginBox">
-                        <input type="text" className="loginInput" placeholder="Username or Email"/>
-                        <input type="password" className="loginInput" placeholder="Password"/>
-                        <button className="loginButton">Login</button>
+                    <form className="loginBox" onSubmit={handleLogin}>
+                        <input type="text" className="loginInput" placeholder="Username or Email" ref={email}/>
+                        <input type="password" className="loginInput" placeholder="Password" ref={password}/>
+                        <button className="loginButton">{isFetching? <CircularProgress/> : "Login"}</button>
                         <span className="loginText3">Don't have an account? <a href="/register">Sign up</a></span>
 
-                    </div>
+                    </form>
                     </div>
                 </div>
                 </div>

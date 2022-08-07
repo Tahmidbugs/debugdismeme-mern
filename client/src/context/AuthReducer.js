@@ -1,4 +1,4 @@
-const AuthReducer = (state, action) => {
+export const AuthReducer = (state, action) => {
   switch (action.type) {
     case "LOGIN_START":
       return {
@@ -19,6 +19,13 @@ const AuthReducer = (state, action) => {
         isFetching: false,
         error: action.payload,
       };
+    case "LOGOUT":
+      return {
+        ...state,
+        isAuthenticated: false,
+        user: null,
+      };
+
     default:
       return state;
   }
