@@ -8,12 +8,14 @@ router.post("/register", async (req, res) => {
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
+    fullname: req.body.fullname,
   });
   try {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(user.password, salt);
     user.password = hashedPassword;
     const newUser = await user.save();
+    console.log("newUser registerd", newUser);
     res.status(200).json(newUser);
   } catch (err) {
     console.log(err);

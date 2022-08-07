@@ -25,7 +25,15 @@ export const AuthReducer = (state, action) => {
         isAuthenticated: false,
         user: null,
       };
-
+    case "REGISTERED": {
+      console.log("REGISTERED", action.payload);
+      return {
+        ...state,
+        isFetching: false,
+        isAuthenticated: true,
+        user: action.payload,
+      };
+    }
     default:
       return state;
   }
