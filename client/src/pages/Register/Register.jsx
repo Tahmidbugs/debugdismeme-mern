@@ -37,7 +37,7 @@ function Register(props) {
 
 
         }
-        e.preventDefault();
+        
 
        console.log(email.current.value,password.current.value);
       
