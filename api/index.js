@@ -26,9 +26,28 @@ app.use(morgan("common"));
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/posts", PostRoute);
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
+
+const multer = require("multer");
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "public/images");
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  },
 });
+
+const upload = multer({ storage });
+app.post("/api/upload", upload.single("image"), (req, res) => {
+  try {
+    console.log(req.file);
+    return res.status(200).json("File uploaded");
+  } catch (err) {
+    console.log("We have a problem", err);
+    return res.status(500).json("couldn't upload file");
+  }
+});
+
 //routes
 
 app.listen(8800, () => {
