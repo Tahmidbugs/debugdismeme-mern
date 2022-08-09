@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {MdAddPhotoAlternate, MdCreate} from "react-icons/md";
+import { AuthContext } from '../../../context/AuthContext';
 import './feed.css';
 function UploadPost(props) {
+    const {user} = useContext(AuthContext);
     return (
        
             <div className="uploadpostcontainer">
                 <div className="uploadpostwrapper">
                    <div className="shareTop">
                     <img className="shareTopImg" src={require("../../../assets/7.png")}/>
-                    <input placeholder='Write a pun / share a meme' className='shareInput'/>
+                    <input placeholder={`Hey ${user.username }! Write a pun / share a meme`} className='shareInput'/>
                    </div>
                    <hr className="shareHr"/>
                      <div className="shareBottom">

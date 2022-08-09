@@ -3,7 +3,9 @@ import './register.css';
 import {useRef} from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import axios from 'axios';
-import { Navigate } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import {CircularProgress} from '@material-ui/core';
+
 function Register(props) {
     const fullname= useRef();
     const username = useRef();
@@ -11,7 +13,7 @@ function Register(props) {
     const password= useRef();
     const confirmPassword= useRef();
 
-    const {user,dispatch, isFetching}= useContext(AuthContext);
+    const {dispatch, isFetching}= useContext(AuthContext);
     const handleRegister = async(e) => {
         e.preventDefault();
         if(password.current.value !== confirmPassword.current.value){
@@ -60,8 +62,8 @@ function Register(props) {
                         <input required type="email" ref={email} className="registerInput" placeholder="Email" />
                         <input required type="password"  ref={password} className="registerInput" placeholder="Password"  minLength={6}/>
                         <input required type="password" ref={confirmPassword} className="registerInput" placeholder="Re-enter password"  minLength={6}/>
-                        <button className="registerButton" type='submit'>Create Account</button>
-                        <span className="registerText3">Already have an account? <a href="/login">Login</a></span>
+                        <button className="registerButton" type='submit' >{isFetching? <CircularProgress/> : "Sign up"}</button>
+                        <span className="registerText3">Already have an account? </span><Link to="/login" className="loginLink"><button className="LoginButton1">Sign in</button></Link>
 
                     </form>
                 </div>

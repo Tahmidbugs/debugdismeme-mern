@@ -1,7 +1,7 @@
 .login{
     height: 100vh;
     width: 100vw;
-    background-color: black;
+   
 }
 .loginwrapper{
    display: flex;
@@ -10,7 +10,7 @@
 }
 .loginText{
    font-size: 25px;
-    color:black;
+    color:#F9883E;
     font-weight: bold;
     margin:55px;
     text-align: center;
@@ -28,21 +28,23 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    margin-left: 30px;
+    height: 100vh;
+    width: 100vw;
     align-items: center;
-    margin-top:250px;
-    background-color: #F9883E;
-    border-radius: 50px;
-    height: 400px;
+    justify-content: center;
+    background-color: #000000;
+    
     
 }
 .loginRight{
     flex: 1;
     display: flex;
-    padding: 30px;
+    height: 100vh;
+    width: 100vw;
     flex-direction: column;
     align-items: center;
-    margin-top:140px;
+    justify-content: center;
+    background-color: #F9883E;
     justify-items: flex-end;
    
     
@@ -50,12 +52,7 @@
     
    
 }
-.loginRightWrapper{
-    background-color: #F9883E;
-    height:480px;
-    padding: 40px;
-    border-radius: 40px;
-}
+
 
 .loginLogo{
     height: 250px;
@@ -69,13 +66,13 @@
 }
 .loginInput{
     width: 300px;
-    height: 50px;
+    height: 30px;
     border-radius: 20px;
     border: 3px solid black;
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 16px;
     padding: 10px;
-    font-weight: bold;
+    
     color: black;
     background-color: #38200942;
 }
@@ -88,11 +85,30 @@
     border-radius: 15px;
     border: 1px solid #F9883E;
     background-color: black;
-    color: white;
+    color: #F9883E;
     font-size: 20px;
-    margin-top: 15px;
+    margin-top: 10px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.loginButton:hover{
+    opacity: 0.8;
+}
+.RegisterButton1{
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+    border: 1px solid #F9883E;
+    background-color: rgb(0, 0, 0);
+    color: #F9883E;
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.RegisterButton1:hover{
+    opacity: 0.8;
 }
 .loginText3{
     font-size: 20px;
@@ -100,16 +116,4 @@
     font-weight: bold;
     margin-top: 20px;
     text-align: center;
-}
-.RegisterButton{
-    width: 240px;
-    height: 50px;
-    border-radius: 15px;
-    border: 1px solid #F9883E;
-    background-color: rgb(85, 151, 23);
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 20px;
 }

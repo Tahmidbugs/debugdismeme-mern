@@ -1,7 +1,7 @@
 .register{
     height: 100vh;
     width: 100vw;
-    background-color: #F9883E;
+    
 }
 .registerwrapper{
    display: flex;
@@ -27,30 +27,26 @@
 .registerLeft{
     flex: 1;
     display: flex;
+    height: 100vh;
+    width: 100vw;
     flex-direction: column;
-    margin-left: 30px;
-    align-items: center;
-    margin-top:250px;
+    align-items: center;  
+    justify-content: center;
     background-color: black;
-    height:80%;
-    border-radius: 50px;
+ 
+  
     
 }
 .registerRight{
     flex: 1;
     display: flex;
-    padding: 30px;
+    height: 100vh;
+    width: 100vw;
     flex-direction: column;
     align-items: center;
-    margin-top:150px;
-    justify-items: flex-end;
-   
-    
- 
-    
-   
+    justify-content: center;
+    background-color: #F9883E;
 }
-
 .registerLogo{
     height: 250px;
 
@@ -62,16 +58,16 @@
     align-items: center;
 }
 .registerInput{
-    width: 300px;
-    height: 50px;
+    width: 250px;
+    height: 30px;
     border-radius: 20px;
-    border: 3px solid black;
+    border: 4px solid black;
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 16px;
     padding: 10px;
-    font-weight: bold;
+    
     color: black;
-    background-color: #8a512b60;
+    background-color:#38200942;
 }
 .registerInput::placeholder{
     color: rgb(0, 0, 0);
@@ -82,27 +78,32 @@
     border-radius: 15px;
     border: 1px solid #F9883E;
     background-color: rgb(0, 0, 0);
-    color: white;
+    color: #F9883E;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
+    margin-top: 15px;
 }
 .registerText3{
     font-size: 20px;
     color: black;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: center;
 }
-.RegisterButton{
-    width: 240px;
+
+.LoginButton1{
+    width: 200px;
     height: 50px;
     border-radius: 15px;
     border: 1px solid #F9883E;
-    background-color: rgb(85, 151, 23);
-    color: white;
+    background-color: rgb(0, 0, 0);
+    color: #F9883E;
     font-size: 20px;
+    margin-top: 10px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 20px;
+}
+.LoginButton1:hover{
+    opacity: 0.8;
 }

@@ -41,6 +41,11 @@
 .shareInput::placeholder {
     color: #cf9873;
 }
+.shareInput:hover{
+    border:none;
+    outline:none;
+    opacity: 0.8;
+}
 .shareHr{
     margin:20px;
     background-color: red;
@@ -55,14 +60,19 @@
 
 .shareOptions{
     display:flex;
+    flex:1;
     cursor: pointer;
     align-items: center;
     margin-bottom:10px;
+    justify-content: space-around;
+    
+    
 }
 .shareOption{
-    display:flex;
-    align-items: center;
-    margin-left:150px;
+    border: 1px dotted #F9883E;
+    padding: 5px;
+    border-radius: 10px;
+      
 }
 
 .shareOption:hover{
@@ -78,23 +88,30 @@
 .shareOptionText{
     color: #F9883E;
 }
+.sharebutton{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+}
 .shareButton{
     background-color: #F9883E;
-    border-radius: 15%;
-    width: 80x;
-    height: 30px;
+    border-radius: 10px;
+    padding:8px;
+    padding-left: 12px;
+    padding-right: 12px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin:auto;
-    margin-top:20px;
+    align-items: center;
     cursor: pointer;
     color: black;
     font-size: 15px;
     font-weight: bold;
 }
-
+.shareButton:hover{
+    opacity: 0.8;
+}
 .post{
     width: 80%;
     display: block;
@@ -177,4 +194,22 @@
 .postReaction:hover{
     opacity:0.7;
     color: yellow;
+}
+.postBottomLeftText {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    color: #F9883E;
+    margin-top: 15px;
+  
+}
+.postReactionCount{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    cursor: pointer;
+    margin-right:20px;
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: bold;
 }
