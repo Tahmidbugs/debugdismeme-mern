@@ -40,7 +40,6 @@ router.get("/", async (req, res) => {
     const { _id, username, email, profilePicture, ...rest } = user._doc;
 
     res.status(200).json(user);
-    console.log("users are:", user);
   } catch (err) {
     console.log(err);
   }

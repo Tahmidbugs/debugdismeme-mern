@@ -7,6 +7,7 @@ const morgan = require("morgan");
 const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
 const PostRoute = require("./routes/posts");
+const path = require("path");
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ mongoose
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
+app.use("/images", express.static(path.join(__dirname, "public/images")));
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/posts", PostRoute);
@@ -33,18 +35,18 @@ const storage = multer.diskStorage({
     cb(null, "public/images");
   },
   filename: function (req, file, cb) {
+    console.log("body", req.body);
     cb(null, file.originalname);
   },
 });
 
 const upload = multer({ storage });
-app.post("/api/upload", upload.single("image"), (req, res) => {
+app.post("/api/upload", upload.single("file"), (req, res) => {
   try {
-    console.log(req.file);
-    return res.status(200).json("File uploaded");
+    res.status(200).json("File uploaded");
   } catch (err) {
-    console.log("We have a problem", err);
-    return res.status(500).json("couldn't upload file");
+    console.log("error in index.js");
+    res.status(500).json("couldn't upload file");
   }
 });
 

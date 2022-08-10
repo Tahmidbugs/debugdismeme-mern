@@ -9,10 +9,28 @@ function UploadPost(props) {
     const [file, setFile] = React.useState(null);
 
     const handleUpload = async(e) => {
+        
         e.preventDefault();
         const newPost ={
             userid: user._id,
             caption: caption.current.value,
+
+        }
+        if(file){
+            const data = new FormData();
+            const fileName =  file.name;
+            data.append('file', file);
+            data.append('name', fileName);
+          
+            newPost.imageURL= fileName;
+            try{
+                const res = await axios.post('/upload', data);
+                console.log(res.data);
+            }
+            catch(err){
+                console.log("THE WRROR IS",err);
+                alert(err);
+            }
 
         }
         try{
@@ -38,7 +56,7 @@ function UploadPost(props) {
                                 <label htmlFor='file' className="shareOption">
                                     <MdAddPhotoAlternate className="shareOptionIcon"/>
                                     <span className="shareOptionText">Upload a meme</span>
-                                    <input type="file" id='file' className="shareOptionInput" accept='.png,.jpeg,.jpg' onChange={(e)=> setFile(e.target.files[0])} style={{display:"none"}}/>
+                                    <input type="file" id='file' name='file' className="shareOptionInput" accept='.png,.jpeg,.jpg' onChange={(e)=> setFile(e.target.files[0])} style={{display:"none"}}/>
                                     </label>
                                 <div className="shareOption">
                                     <MdCreate className="shareOptionIcon"/>

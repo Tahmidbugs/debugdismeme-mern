@@ -23,7 +23,7 @@ function Post({post}) {
             console.log(err);
         }
         );
-        console.log("fetched user: ",postOwner);
+        // console.log("fetched user: ",postOwner);
     }
     React.useEffect(() => {
         fetchPostOwner();
@@ -125,7 +125,7 @@ function Post({post}) {
 </div>
 <div className="postCenter">
     <div><span className="postCaption">{post.caption}</span></div>
-    {post.imageURL && <div className="postImage"><img src={post.imageURL} alt="" className='postimage'/></div>}
+    {post.imageURL && <div className="postImage"><img src={require(`../../../../../api/public/images/${post.imageURL}`)} alt="" className='postimage'/></div>}
 </div>
 <div className="postBottom">
     <div className="postBottomLeft">
