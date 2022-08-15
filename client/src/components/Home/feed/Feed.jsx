@@ -3,7 +3,7 @@ import './feed.css';
 import UploadPost from './UploadPost';
 import axios from 'axios';
 import Post from './Post';
-
+import CreateMeme from './CreateMeme';
 function Feed({username}) {
     const[posts, setPosts] = React.useState([]);
     const fetchPosts = async() => {

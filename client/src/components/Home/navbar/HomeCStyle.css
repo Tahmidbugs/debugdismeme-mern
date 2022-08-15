@@ -16,4 +16,5 @@ input:focus{
     border-bottom: 1px solid #804A14;
     position: sticky;
   top: 0px;
+  z-index: 1;
 }

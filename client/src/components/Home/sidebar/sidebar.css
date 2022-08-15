@@ -1,9 +1,13 @@
 .sidebarcontainer{
     flex: 2;
-    
     background-color: black;
     border-color: burlywood;
+    height:100%;
     overflow-y: scroll;
+    scrollbar-color: #804A14;
+    scrollbar-width: thin;
+    scrollbar-track-color: #804A14;
+   scrollbar-face-color: #804A14;
     position: sticky;
     top: 150px;
     

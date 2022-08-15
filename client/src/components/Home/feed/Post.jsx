@@ -125,7 +125,9 @@ function Post({post}) {
 </div>
 <div className="postCenter">
     <div><span className="postCaption">{post.caption}</span></div>
-    {post.imageURL && <div className="postImage"><img src={require(`../../../../../api/public/images/${post.imageURL}`)} alt="" className='postimage'/></div>}
+    {post.imageURL && <div className="postImage"><img src={post.customMeme? post.imageURL : require(`../../../../../api/public/images/${post.imageURL}`)} alt="" className='postimage'/></div>}
+    {post.topCaption!="" && <h1 className="topCaptionPost">{post.topCaption}</h1>}
+    {post.bottomCaption!="" && <h1 className="bottomCaptionPost">{post.bottomCaption}</h1>}
 </div>
 <div className="postBottom">
     <div className="postBottomLeft">

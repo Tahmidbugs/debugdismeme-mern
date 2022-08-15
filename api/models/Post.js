@@ -27,6 +27,18 @@ const PostSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    topCaption: {
+      type: String,
+      default: "",
+    },
+    bottomCaption: {
+      type: String,
+      default: "",
+    },
+    customMeme: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true }
 );

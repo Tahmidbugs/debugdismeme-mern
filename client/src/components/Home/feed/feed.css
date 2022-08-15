@@ -1,12 +1,13 @@
 .feedcontainer{
     flex:6;
+    
 }
 
 
 .uploadpostcontainer{
     width: 80%;
     margin: auto;
-    max-height:240px;
+   
     border-radius: 10px;
     background-color: #140b01;
     margin-top: 10px;
@@ -112,6 +113,33 @@
 .shareButton:hover{
     opacity: 0.8;
 }
+
+.thumbnailContainer{
+    padding: 0px 20px 10px 20px;
+    position: relative;
+    display: flex;
+    flex:1;
+    align-items: center;
+    justify-content: center;
+}
+.thumbnail{
+    width:300px;
+    height:300px;
+    border-radius:20px;
+    object-fit: cover;
+
+   
+}
+.closeIcon{
+    position: absolute;
+    top: -15px;
+    align-self: center;
+    left: 220px;
+    opacity: 0.8;
+    font-size: 35px;
+    color:#F9883E;
+    cursor: pointer;
+}
 .post{
     width: 80%;
     display: block;
@@ -129,6 +157,7 @@
 }
 .postCenter{
     margin-top: 10px;
+    position: relative;
 }
 .postTop{
     display:flex;
@@ -171,12 +200,13 @@
     margin:10px 20px;
 }
 .postimage{
-    width:500px;
+    width:70%;
     height:100%;
     border-radius: 10px;
     display: block;
     margin:auto;
     margin-top: 10px;
+    position:relative;
 
    
 }
@@ -219,4 +249,274 @@
     margin-left: 20px;
     font-size: 15px;
     font-weight: bold;
+}
+.templates{
+    display: flex;
+    margin-top: 20px;
+    
+}
+.templateSelect{
+    max-width: 750px;
+    width: 100%;
+   
+    overflow-x: scroll;
+}
+.templateSelect::-webkit-scrollbar{
+    width: 0px;
+
+}
+.templateSelect::-webkit-scrollbar-thumb{
+    background-color: black;
+    width: 0px;
+}
+.templateSelect::-webkit-scrollbar-track{
+    background-color: #F9883E ;
+    width: 0px;
+}
+.template{
+    width:150px;
+    height:150px;
+    border-radius:10%;
+    margin-right:10px;
+
+}
+.template:hover{
+    opacity:0.7;
+}
+.templateSelectText{
+    color: #F9883E;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.templateEdit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.createOrBackButtons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.captionInput{
+    width:80%;
+    height:25px;
+    border-radius:10px;
+    margin-top:10px;
+    margin-bottom:10px;
+    border: 1px solid #F9883E;
+    padding:10px;
+    background-color: #342007;
+    color: #F9883E;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.BackButton{
+    background-color: black;
+    border-radius: 10px;
+    padding:8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #F9883E;
+    font-size: 15px;
+    font-weight: bold;
+}
+.BackButton:hover{
+    opacity: 0.8;
+}
+.CreateMemeButton{
+    background-color: #F9883E;
+    border-radius: 10px;
+    padding:8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
+.CreateMemeButton:hover{
+    opacity: 0.8;
+}
+.selectedTemplate{
+    border: 1px solid #F9883E;
+    border-radius: 10px;
+    max-height:75%;
+    max-width:75%;
+    object-fit: cover;
+}
+.topCaption{
+    
+   
+    position: absolute;
+    width: 75%;
+    max-width: 500px;
+    text-align: center;
+    left: 51%;
+    transform: translateX(-50%);
+    margin: 15px 0;
+    padding: 0 5px;
+    word-wrap: break-word;
+    font-family: impact, sans-serif;
+    font-size: 1.4vw;
+    text-transform: uppercase;
+    top: 25%;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
+
+}
+.bottomCaption{
+    position: absolute;
+    width: 75%;
+    max-width: 500px;
+    text-align: center;
+    left: 51%;
+    transform: translateX(-50%);
+    margin: 15px 0;
+    padding: 0 5px;
+    word-wrap: break-word;
+    font-family: impact, sans-serif;
+    font-size: 1.4vw;
+    text-transform: uppercase;
+    top: 75%;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
+}
+.topCaptionPost{
+
+    position: absolute;
+    width: 75%;
+    max-width: 500px;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 15px 0;
+    padding: 0 5px;
+    word-wrap: break-word;
+    font-family: impact, sans-serif;
+    font-size: 1.4vw;
+    text-transform: uppercase;
+    top: 10%;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
+
+    
+}
+.bottomCaptionPost{
+    position: absolute;
+    width: 75%;
+    max-width: 500px;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 15px 0;
+    padding: 0 5px;
+    word-wrap: break-word;
+    font-family: impact, sans-serif;
+    font-size: 1.4vw;
+    text-transform: uppercase;
+    top:80%;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
+}
+.topCaptionThumbnail{
+    position: absolute;
+    width: 75%;
+    max-width: 500px;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 15px 0;
+    padding: 0 5px;
+    word-wrap: break-word;
+    font-family: impact, sans-serif;
+    font-size: 1vw;
+    text-transform: uppercase;
+    top:5%;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
+}
+.bottomCaptionThumbnail{
+    position: absolute;
+    width: 75%;
+    max-width: 500px;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 15px 0;
+    padding: 0 5px;
+    word-wrap: break-word;
+    font-family: impact, sans-serif;
+    font-size: 1vw;
+    text-transform: uppercase;
+    top:80%;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
 }
