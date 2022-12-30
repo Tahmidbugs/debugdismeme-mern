@@ -7,6 +7,8 @@ export const AuthReducer = (state, action) => {
         error: null,
       };
     case "LOGIN_SUCCESS":
+      localStorage.setItem("loggedIn", JSON.stringify(action.payload));
+
       return {
         ...state,
         isFetching: false,
@@ -20,6 +22,7 @@ export const AuthReducer = (state, action) => {
         error: action.payload,
       };
     case "LOGOUT":
+      localStorage.removeItem("loggeIn");
       return {
         ...state,
         isAuthenticated: false,
