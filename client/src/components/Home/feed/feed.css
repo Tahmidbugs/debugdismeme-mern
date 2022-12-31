@@ -1,5 +1,5 @@
 .feedcontainer{
-    flex:6;
+    padding: 0 20%;
     
 }
 
@@ -70,9 +70,10 @@
     
 }
 .shareOption{
-    border: 1px dotted #F9883E;
+    border: 1px  #F9883E;
     padding: 5px;
     border-radius: 10px;
+    background-color: black;
       
 }
 

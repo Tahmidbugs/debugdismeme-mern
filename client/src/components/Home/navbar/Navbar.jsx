@@ -14,13 +14,13 @@ function Navbar(props) {
     }
     return (
         <div className="navbar" >
-            
+            <BiExit onClick={handleLogout} style={{color:"orange" , fontSize:40, alignSelf:"center", cursor:"pointer", marginRight:30 }}/>
           <Link to="/"> 
         <img src={require("../../../assets/logo.png")} style={{height:120, width:300, alignSelf:"center"}}/>      
         </Link>
-        <Searchbar/>
+        <div></div>
         
-        <BiExit onClick={handleLogout} style={{color:"orange" , fontSize:40, alignSelf:"center", cursor:"pointer", marginRight:30 }}/>
+        
         
         </div>
     );

@@ -10,9 +10,9 @@ function Home(props) {
         <div style={{backgroundColor:"black"}}>
            <Navbar/>
            <div style={{display:"flex"}}>
-           <Sidebar />
+           <div></div>
            <Feed/>
-           <Rightbar/>
+           <div></div>
            </div>
         </div>
     );
