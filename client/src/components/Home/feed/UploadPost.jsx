@@ -32,20 +32,20 @@ function UploadPost(props) {
 
         }
         if(file){
-            const data = new FormData();
-            const fileName =  file.name;
-            data.append('file', file);
-            data.append('name', fileName);
-          
-            newPost.imageURL= fileName;
+            
+            const formData = new FormData();
+            formData.append('file', file);
+            
             try{
-                const res = await axios.post('/upload', data);
-                console.log(res.data);
+                const res = await axios.post('/upload', formData)
+                console.log("urlres",res.data)
+                newPost.imageURL= res.data;
             }
             catch(err){
                 console.log("THE WRROR IS",err);
                 alert(err);
             }
+        
 
         }
         try{
