@@ -7,6 +7,7 @@ router.post("/", async (req, res) => {
   const post = await new Post(req.body);
   try {
     const savedPost = await post.save();
+    console.log("posted to mongodb");
     res.status(200).json(savedPost);
   } catch (err) {
     console.log(err);
@@ -17,6 +18,7 @@ router.post("/", async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const posts = await Post.find();
+    console.log(posts);
     res.status(200).json(posts);
   } catch (err) {
     console.log(err);

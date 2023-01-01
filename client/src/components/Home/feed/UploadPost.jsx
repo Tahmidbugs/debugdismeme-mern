@@ -79,13 +79,13 @@ function UploadPost(props) {
                             <div className="shareOptions">
                                 <label htmlFor='file' className="shareOption">
                                     <MdAddPhotoAlternate className="shareOptionIcon"/>
-                                    <span className="shareOptionText"><button class="btn btn-primary">Upload a meme</button></span>
+                                    <span className="shareOptionText"><button className="btn " style={{backgroundColor:"#F9883E", fontWeight:"bold", color:"black"}}>Upload a meme</button></span>
                                     <input type="file" id='file' name='file' className="shareOptionInput" accept='.png,.jpeg,.jpg' onChange={(e)=> setFile(e.target.files[0])} style={{display:"none"}}/>
                                     </label>
                                 <div className="shareOption">
                                     <MdCreate className="shareOptionIcon"/>
                                     {/* <span   >Create a meme</span> */}
-                                    <button onClick={()=> setModalvisible(true)} className="shareOptionText" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                    <button onClick={()=> setModalvisible(true)}  style={{backgroundColor:"#F9883E", fontWeight:"bold", color:"black"}} className="btn shareOptionText" type="button" data-toggle="modal" data-target="#myModal">
                                             Create meme
                                         </button>
                                     </div>
@@ -100,30 +100,31 @@ function UploadPost(props) {
         <button className="shareButton" type="submit">Share</button>
         
 
-  
-                            <div class="modal fade" id="myModal">
-                                <div class="modal-dialog" >
-                                <div class="modal-content" style={{backgroundColor:"black"}}>
+                        {modalvisible&&
+                            <div className="modal fade" id="myModal" style={{display:"flex", alignItems:"center"}}>
+                                <div className="modal-dialog"  >
+                                <div className="modal-content" style={{backgroundColor:"rgba(20, 11, 1, 1.829)"}}>
                                 
                                     
-                                    <div class="modal-header">
-                                    <h4 class="modal-title">Choose a template and create a meme</h4>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <div className="modal-header">
+                                    <p className="modal-title" style={{fontWeight:"bold", color:"#F9883E", fontSize:20, padding:10}}>Choose a template and create a meme</p>
+                                    <button type="button" className="close" data-dismiss="modal">&times;</button>
                                     </div>
                                     
                                 
-                                    <div class="modal-body">
-                                    <CreateMeme setModalvisible={setModalvisible} setCustomMeme={setCustomMeme}/>
+                                    <div className="modal-body">
+                                    <CreateMeme setModalvisible={setModalvisible} setCustomMeme={setCustomMeme} modalvisible={modalvisible}/>
                                     </div>
                                     
                                     
-                                    <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    <div className="modal-footer">
+                                    <button type="button" className="btn btn-danger" data-dismiss="modal">Close</button>
                                     </div>
                                     
                                 </div>
                                 </div>
                             </div>
+}
         </div>
 
         </form>

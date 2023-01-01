@@ -105,7 +105,10 @@ function Post({post}) {
 
 
     return (
-        <div className='post'>
+       
+        
+        <div className='post '>
+        
             <div className='post-wrapper'>
 <div className="postTop">
     <div className="postTopLeft">
@@ -147,6 +150,7 @@ function Post({post}) {
 </div>
             
         </div>
+        
     );
 }
 

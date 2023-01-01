@@ -25,7 +25,7 @@ mongoose
 //middleware
 app.use(express.json());
 app.use(helmet());
-app.use(morgan("common"));
+// app.use(morgan("common"));
 app.use("/images", express.static(path.join(__dirname, "public/images")));
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
