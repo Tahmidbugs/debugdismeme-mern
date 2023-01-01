@@ -1,5 +1,5 @@
 .feedcontainer{
-    padding: 0 20%;
+    margin:auto
     
 }
 
@@ -10,7 +10,7 @@
    
     border-radius: 10px;
     background-color: rgba(20, 11, 1, 0.529);
-    margin-top: 10px;
+    margin-top: 30px;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.749);
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
@@ -71,8 +71,8 @@
 }
 .shareOption{
     border: 1px  #F9883E;
-    padding: 5px;
-    border-radius: 10px;
+    /* padding: 5px; */
+    border-radius: 5px;
     background-color: black;
       
 }
@@ -81,8 +81,9 @@
     opacity:0.7;
 }
 .shareOptionIcon{
-    font-size: 18px;
+    font-size: 20px;
     margin-right:3px;
+    margin-left:5px;
 }
 .shareOptionIcon{
     color:#F9883E;
@@ -150,19 +151,19 @@
     border-radius: 10px;
     margin: auto;
     margin-top: 40px;
-
+    font-family: 'Fira Mono', monospace;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 @keyframes pulse {
     from {
-      border-color: rgb(68, 35, 3);
+      border-color: #63370b;
     }
     50% {
-      border-color: rgb(88, 49, 12);
+      border-color: #F9883E;
     }
     to {
-      border-color: rgb(58, 32, 8);
+      border-color:#63370b;
     }
   }
 .post-wrapper{
@@ -210,8 +211,8 @@
 }
 .postCaption{
     color: #F9883E;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 500;
     margin:10px 20px;
 }
 .postimage{

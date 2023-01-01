@@ -3,7 +3,7 @@ import React, { useContext, useRef } from 'react';
 import {MdAddPhotoAlternate, MdCreate} from "react-icons/md";
 import { AuthContext } from '../../../context/AuthContext';
 import { RiCloseCircleFill } from "react-icons/ri";
-
+import {GiFlamingArrow} from "react-icons/gi"
 import './feed.css';
 import CreateMeme from './CreateMeme';
 function UploadPost(props) {
@@ -79,14 +79,14 @@ function UploadPost(props) {
                             <div className="shareOptions">
                                 <label htmlFor='file' className="shareOption">
                                     <MdAddPhotoAlternate className="shareOptionIcon"/>
-                                    <span className="shareOptionText"><button className="btn " style={{backgroundColor:"#F9883E", fontWeight:"bold", color:"black"}}>Upload a meme</button></span>
+                                    <span className="shareOptionText"><button className="btn " style={{backgroundColor:"#F9883E",fontWeight:"bold", color:"black", borderRadius:"5%"}}>Upload a meme</button></span>
                                     <input type="file" id='file' name='file' className="shareOptionInput" accept='.png,.jpeg,.jpg' onChange={(e)=> setFile(e.target.files[0])} style={{display:"none"}}/>
                                     </label>
                                 <div className="shareOption">
                                     <MdCreate className="shareOptionIcon"/>
                                     {/* <span   >Create a meme</span> */}
-                                    <button onClick={()=> setModalvisible(true)}  style={{backgroundColor:"#F9883E", fontWeight:"bold", color:"black"}} className="btn shareOptionText" type="button" data-toggle="modal" data-target="#myModal">
-                                            Create meme
+                                    <button onClick={()=> setModalvisible(true)}  style={{backgroundColor:"#F9883E", fontWeight:"bold", color:"black", borderRadius:"5%"}} className="btn shareOptionText" type="button" data-toggle="modal" data-target="#myModal">
+                                            Create a meme
                                         </button>
                                     </div>
 
@@ -97,7 +97,15 @@ function UploadPost(props) {
         </div>
         {/* {modalvisible && <CreateMeme setModalvisible={setModalvisible} setCustomMeme={setCustomMeme}/>} */}
         <div className="sharebutton">
-        <button className="shareButton" type="submit">Share</button>
+        <div className="shareOption">
+                                    <GiFlamingArrow className="shareOptionIcon submiticon"/>
+                                    {/* <span   >Create a meme</span> */}
+                                    <button type="submit" style={{backgroundColor:"#F9883E", fontWeight:"bold", color:"black", borderRadius:"5%"}} className="btn shareOptionText" >
+                                        Share
+                                        </button>
+                                        <GiFlamingArrow className="shareOptionIcon submiticon2"/>
+                                    </div>
+        {/* <button className="shareButton" type="submit">Share</button> */}
         
 
                         {modalvisible&&
