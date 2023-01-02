@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "build": "cd client && npm run build",
+    "deploy": "npm run build && cd build && netlify deploy --dir=. --prod",
+    "start": "cd api && npm run start",
+    "server": "cd api && npm run start",
+    "client": "cd client && npm run start",
+    "dev": "concurrently --kill-others-on-fail \"cd api && npm run start\" \"npm run client\""
+  }
+}
