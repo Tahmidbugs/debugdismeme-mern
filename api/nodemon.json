@@ -1,6 +1,0 @@
-{
-    "watch": ["routes"],
-    "ext": "js",
-    "ignore": ["/client/*"]
-  }
-  
