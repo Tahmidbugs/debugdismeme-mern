@@ -3,7 +3,7 @@ import './register.css';
 import {useRef} from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import {CircularProgress} from '@material-ui/core';
 
 function Register(props) {
@@ -12,8 +12,8 @@ function Register(props) {
     const email= useRef();
     const password= useRef();
     const confirmPassword= useRef();
-
-    const {dispatch, isFetching}= useContext(AuthContext);
+    const navigate= useNavigate();
+    const {isFetching}= useContext(AuthContext);
     const handleRegister = async(e) => {
         e.preventDefault();
         if(password.current.value !== confirmPassword.current.value){
@@ -29,9 +29,11 @@ function Register(props) {
             }
             try{
             const res = await axios.post('/auth/register', user);
-                
-            console.log(res.data);
-            dispatch({type: 'LOGIN_SUCCESS', payload: res.data});
+            console.log("dispatiching",res.data);
+            navigate("/accountSetUp", {state:res.data});    
+           
+            
+            
         }
             catch(err){
                 alert(err);

@@ -5,6 +5,7 @@ const User = require("../models/User");
 
 //update user
 router.put("/:id", async (req, res) => {
+  console.log("trying to update ", req.body);
   if (req.body.password) {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);

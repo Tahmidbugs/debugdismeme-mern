@@ -1,0 +1,70 @@
+.AccountSetUp{
+    height: 100vh;
+    width: 100vw;
+    
+}
+.AccountSetUpwrapper{
+   display: flex;
+   flex:1;
+   
+}
+.selectedd{
+    border-width: 5px;
+    border-color: black;
+}
+.profilePicture:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+.AccountSetUpText{
+   font-size: 25px;
+    color:#F9883E;
+    font-weight: bold;
+    margin:55px;
+    text-align: center;
+
+}
+
+
+.AccountSetUpLeft{
+    flex: 1;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;  
+    justify-content: center;
+    background-color: black;
+ 
+  
+    
+}
+.AccountSetUpRight{
+    flex: 1;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F9883E;
+}
+.AccountSetUpLogo{
+    height: 250px;
+
+}
+
+
+.AccountSetUpButton{
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+    border: 1px solid #F9883E;
+    background-color: rgb(0, 0, 0);
+    color: #F9883E;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
