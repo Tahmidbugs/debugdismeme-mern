@@ -10,6 +10,7 @@ const PostRoute = require("./routes/posts");
 const path = require("path");
 const multerS3 = require("multer-s3");
 const AWS = require("aws-sdk");
+const cors = require("cors");
 
 dotenv.config();
 
@@ -25,8 +26,14 @@ mongoose
 //middleware
 app.use(express.json());
 app.use(helmet());
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type"],
+  })
+);
 // app.use(morgan("common"));
-app.use("/images", express.static(path.join(__dirname, "public/images")));
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/posts", PostRoute);
@@ -68,7 +75,7 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
   }
 });
 //routes
-
-app.listen(8800, () => {
-  console.log("Server is running on port 8800");
+const port = process.env.PORT || 8800;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });

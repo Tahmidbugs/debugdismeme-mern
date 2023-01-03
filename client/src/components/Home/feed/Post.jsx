@@ -15,7 +15,7 @@ function Post({post}) {
     const [rofl, setRofl] = React.useState(false);
     const{user}= useContext(AuthContext);
     const fetchPostOwner = async() => {
-        await axios.get(`/users?userid=${post.userid}`)
+        await axios.get(`https://debugthismeme.onrender.com/api/users?userid=${post.userid}`)
         .then(res => {
             setPostOwner(res.data);
         }

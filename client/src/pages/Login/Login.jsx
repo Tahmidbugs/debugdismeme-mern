@@ -5,7 +5,6 @@ import {loginCall} from "../../apiCalls";
 import {useRef} from 'react';
 import { useContext } from 'react';
 import {AuthContext} from "../../context/AuthContext";
-import { CircularProgress } from '@material-ui/core';
 function Login(props) {
     const email= useRef();
     const password= useRef();
@@ -32,7 +31,7 @@ function Login(props) {
                     <form className="loginBox" onSubmit={handleLogin}>
                         <input type="text" className="loginInput" placeholder="Email" ref={email}/>
                         <input type="password" className="loginInput" placeholder="Password" ref={password}/>
-                        <button className="loginButton">{isFetching? <CircularProgress/> : "Sign in"}</button>
+                        <button className="loginButton">"Sign in"</button>
                         
                         <span className="loginText3">Don't have an account?</span> <Link to="/register" className="loginLink"><button className="RegisterButton1">Sign up</button></Link>
 

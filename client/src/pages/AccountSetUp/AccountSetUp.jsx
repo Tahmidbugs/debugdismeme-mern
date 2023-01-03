@@ -27,7 +27,7 @@ function AccountSetUp(props) {
             formData.append('file', file);
             
             try{
-                const res = await axios.post('/upload', formData)
+                const res = await axios.post('https://debugthismeme.onrender.com/api/upload', formData)
                 setSelected(prev => prev.map((item, ind) => ind === 5 ? true : false));
                 setProfilePicture(res.data);
                 credentials.profilePicture=res.data;   

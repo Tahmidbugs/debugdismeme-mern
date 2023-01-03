@@ -7,7 +7,7 @@ import CreateMeme from './CreateMeme';
 function Feed({username}) {
     const[posts, setPosts] = React.useState([]);
     const fetchPosts = async() => {
-        const res=  username? await axios.get(`/posts/profile/`+username) : await axios.get(`/posts`);
+        const res=  username? await axios.get(`https://debugthismeme.onrender.com/api/posts/profile/`+username) : await axios.get(`https://debugthismeme.onrender.com/api/posts`);
         setPosts(res.data.sort((a,b) => {
             return new Date(b.createdAt) - new Date(a.createdAt);
             }));

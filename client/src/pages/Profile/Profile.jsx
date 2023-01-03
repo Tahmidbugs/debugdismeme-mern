@@ -12,7 +12,7 @@ function Profile(props) {
     const[user, setUser] = React.useState(null);  
     const username = useParams().username;
     const fetchUser = async() => {
-        await axios.get(`/users?username=${username}`)
+        await axios.get(`https://debugthismeme.onrender.com/api/users?username=${username}`)
         .then(res => {
             setUser(res.data);
         }

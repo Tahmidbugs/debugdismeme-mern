@@ -4,7 +4,6 @@ import {useRef} from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import axios from 'axios';
 import {Link, useNavigate} from 'react-router-dom';
-import {CircularProgress} from '@material-ui/core';
 
 function Register(props) {
     const fullname= useRef();
@@ -28,7 +27,7 @@ function Register(props) {
                 password: password.current.value
             }
             try{
-            const res = await axios.post('/auth/register', user);
+            const res = await axios.post('https://debugthismeme.onrender.com/api/auth/register', user);
             console.log("dispatiching",res.data);
             navigate("/accountSetUp", {state:res.data});    
            
@@ -64,7 +63,7 @@ function Register(props) {
                         <input required type="email" ref={email} className="registerInput" placeholder="Email" />
                         <input required type="password"  ref={password} className="registerInput" placeholder="Password"  minLength={6}/>
                         <input required type="password" ref={confirmPassword} className="registerInput" placeholder="Re-enter password"  minLength={6}/>
-                        <button className="registerButton" type='submit' >{isFetching? <CircularProgress/> : "Sign up"}</button>
+                        <button className="registerButton" type='submit' >"Sign up"</button>
                         <span className="registerText3">Already have an account? </span><Link to="/login" className="loginLink"><button className="LoginButton1">Sign in</button></Link>
 
                     </form>

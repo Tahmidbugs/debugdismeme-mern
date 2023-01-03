@@ -35,7 +35,7 @@ function UploadPost(props) {
             formData.append('file', file);
             
             try{
-                const res = await axios.post('/upload', formData)
+                const res = await axios.post('https://debugthismeme.onrender.com/api/upload', formData)
                 console.log("urlres",res.data)
                 newPost.imageURL= res.data;
             }
