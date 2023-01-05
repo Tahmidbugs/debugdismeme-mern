@@ -40,14 +40,14 @@ function UploadPost(props) {
                 newPost.imageURL= res.data;
             }
             catch(err){
-                console.log("THE WRROR IS",err);
+                console.log("THE ERROR IS",err);
                 alert(err);
             }
         
 
         }
         try{
-            axios.post("https://debugthismeme.onrender.com/api/posts/", newPost);
+            axios.post("https://debugthismeme.onrender.com/api/posts", newPost);
             window.location.reload();
         }
         catch(err){
