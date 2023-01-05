@@ -90,6 +90,9 @@
 }
 .shareOptionText{
     color: #F9883E;
+    width: 120px;
+    cursor: pointer;
+    
 }
 .sharebutton{
     flex:1;
@@ -101,7 +104,7 @@
 .shareButton{
     background-color: #F9883E;
     border-radius: 10px;
-    padding:8px;
+    padding:0px;
     padding-left: 12px;
     padding-right: 12px;
     display: flex;
@@ -143,7 +146,8 @@
     cursor: pointer;
 }
 .post{
-    width: 80%;
+    max-width: 725px;
+    min-width: 725px;
     display: block;
     background-color: rgba(20, 11, 1, 0.529);
     border: 5px solid rgb(134, 78, 21);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { RiLogoutBoxFill } from "react-icons/ri";
+import { ImExit } from "react-icons/im";
 import Searchbar from './Searchbar';
 import './HomeCStyle.css';
 import {Link, useNavigate} from 'react-router-dom';
@@ -17,8 +17,7 @@ function Navbar(props) {
     }
     return (
         <div className="navbar" >
-            <RiLogoutBoxFill onClick={handleLogout} style={{color:"orange" , fontSize:40, alignSelf:"center", cursor:"pointer", marginRight:30 }}/>
-          <Link to="/"> 
+<ImExit onClick={handleLogout} style={{color:"#F9883E" , fontSize:40, alignSelf:"center", cursor:"pointer", marginRight:30, transform: "rotate(180deg)"}}/>          <Link to="/"> 
         <img src={require("../../../assets/logo.png")} className="headerLogo" />      
         </Link>
         <div></div>

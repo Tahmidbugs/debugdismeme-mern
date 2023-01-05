@@ -47,7 +47,7 @@ function UploadPost(props) {
 
         }
         try{
-            axios.post("/posts/", newPost);
+            axios.post("https://debugthismeme.onrender.com/api/posts/", newPost);
             window.location.reload();
         }
         catch(err){
@@ -77,11 +77,18 @@ function UploadPost(props) {
                    </div>)}
                      <div className="shareBottom">
                             <div className="shareOptions">
-                                <label htmlFor='file' className="shareOption">
-                                    <MdAddPhotoAlternate className="shareOptionIcon"/>
-                                    <span className="shareOptionText"><button className="btn " style={{backgroundColor:"#F9883E",fontWeight:"bold", color:"black", borderRadius:"5%"}}>Upload a meme</button></span>
-                                    <input type="file" id='file' name='file' className="shareOptionInput" accept='.png,.jpeg,.jpg' onChange={(e)=> setFile(e.target.files[0])} style={{display:"none"}}/>
-                                    </label>
+                           
+                                
+                                   
+                                    
+                            <label htmlFor="file"  className="shareOption"  >
+  <MdAddPhotoAlternate className="shareOptionIcon"/>
+  <span  style={{backgroundColor:"#F9883E", fontWeight:"bold", color:"black", borderRadius:"5%"}} className="btn shareOptionText" >
+    Upload a meme
+    <input type="file" id='file' name='file' className="shareOptionInput" accept='.png,.jpeg,.jpg' onChange={(e)=> setFile(e.target.files[0])} style={{display:"none"}}/>
+  </span>
+</label>
+
                                 <div className="shareOption">
                                     <MdCreate className="shareOptionIcon"/>
                                     {/* <span   >Create a meme</span> */}
