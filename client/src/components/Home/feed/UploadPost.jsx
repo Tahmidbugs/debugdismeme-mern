@@ -48,7 +48,8 @@ function UploadPost(props) {
         }
         try{
             axios.post("https://debugthismeme.onrender.com/api/posts", newPost);
-            window.location.reload();
+            // window.location.reload();
+            console.log("newPost: ",newPost);
         }
         catch(err){
             console.log(err);
